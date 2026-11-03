@@ -1,0 +1,124 @@
+Laboratory 6 - IT 313 – Mobile Programming
+Video Demonstration: React Native Core Components in Action
+Objective
+Demonstrate your understanding of React Native's core components by solving a programming problem that
+requires you to lay out a screen with View, Text, and Image, build a scrollable and searchable list with ScrollView
+and TextInput, and handle touch interaction with Pressable — and recording a video that shows and explains your
+solution as you write, run, and test it.
+The Problem: Student Directory Viewer
+The IT313 registrar has given you a list of students who need academic advising this term. Your task is to build a
+small Expo (React Native) screen that lets an adviser browse and search this list, in the style of a real studentdirectory app.
+Starter data (place this in your screen component or a separate data file):
+const students = [
+ { id: "s1", name: "Ana Cruz", year: "3rd Year", photoUrl: "https://i.pravatar.cc/100?
+img=1" },
+ { id: "s2", name: "Bea Santos", year: "2nd Year", photoUrl: "https://i.pravatar.cc/100?
+img=2" },
+ { id: "s3", name: "Cid Ramos", year: "4th Year", photoUrl: "https://i.pravatar.cc/100?
+img=3" },
+ { id: "s4", name: "Dex Alonzo", year: "1st Year", photoUrl: "https://i.pravatar.cc/100?
+img=4" },
+ { id: "s5", name: "Eli Tan", year: "3rd Year", photoUrl: "https://i.pravatar.cc/100?
+img=5" },
+];
+Expected screen: a search box at the top; below it, inside a scrollable list, one card per student showing their photo,
+name, and year level; each card has a "Flag for Advising" control that visibly changes appearance when
+pressed/toggled; typing in the search box narrows the visible cards to names that match.
+High-level design (wireframe) for reference only. Your layout, colors, and styling may differ as long as every
+requirement is met.
+Requirements — your solution must:
+1. Build a functional component named StudentCard that receives id, name, year, photoUrl, flagged, and
+onToggleFlag as props, and lays them out with a View containing an Image and two Text elements.
+2. Give the Image an explicit width/height and rounded corners via StyleSheet.create, and use Flexbox on the
+surrounding View to align the photo and text side by side.
+3. Build a parent component named StudentDirectory that holds the students array in state and renders one
+StudentCard per student inside a ScrollView, using .map() with a stable key={student.id}.
+4. Add a TextInput above the ScrollView bound to a query state via value and onChangeText, and use conditional
+filtering so only students whose name includes the typed text (case-insensitive) are rendered.
+5. Give each StudentCard a Pressable "Flag for Advising" control whose style function ({ pressed }) => ... and
+whose color also reflects a flagged boolean in state, and wire onToggleFlag so pressing it updates that student's
+flagged state in the parent.
+6. Temporarily remove the value/onChangeText pair from the TextInput (make it uncontrolled) and observe what
+happens to filtering as you type, then restore it.
+7. Include a README.md in your project explaining the problem, your component structure (StudentCard vs.
+StudentDirectory), and how to run the app (npx expo start).
+Instructions
+Record yourself solving the problem above, then cut and edit the footage into a single final video of at most 20
+minutes, keeping only the important explanations and demonstrations — do not submit a raw, unedited recording.
+In your video, you should:
+1. Introduce Yourself
+○ State your name and section.
+○ Briefly restate the problem in your own words.
+2. Explain Your Approach
+○ Walk through the requirements and identify which React Native core component you will use to satisfy
+each one (e.g., "I'll use Pressable with a style function so the flag button can visibly change when
+pressed").
+○ Briefly explain the purpose of each component you plan to use: View, Text, Image, ScrollView,
+TextInput, and Pressable.
+3. Solve the Problem on Screen
+○ Record your computer screen while building StudentCard and StudentDirectory in a code editor (e.g.,
+VS Code) inside an Expo project.
+○ Implement StudentCard's layout with View/Image/Text and the Image's fixed size.
+○ Implement StudentDirectory's ScrollView list, the TextInput search filtering, and each card's Pressable
+flag toggle.
+○ Narrate your reasoning as you write each part — not just what the code does, but why you chose that
+component.
+4. Publish Your Code to GitHub
+○ Create a public GitHub repository named IT313_LastName_FirstName_CoreComponents.
+○ Initialize git in your project folder, commit StudentCard, StudentDirectory, and your app entry file, and
+push them to the repository.
+○ Add the README.md required above, describing the problem, your component structure, and how to
+run the app.
+○ In your video, show your repository (or your terminal push) and read out the repository link so it is
+captured in your recording.
+5. Verify Your Output
+○ Run your app in Expo Go or an emulator and compare the rendered screen against the expected screen
+described above.
+○ Show the uncontrolled-TextInput experiment from the Requirements, demonstrate the issue, then
+restore the value/onChangeText pair and confirm the search filters correctly again.
+6. Discuss a Common Problem or Error
+○ Identify at least one problem or error you hit (or could occur) while solving this specific problem —
+e.g., a remote Image that never appears because no width/height was set, a search box that stops
+filtering because onChangeText never updates state, or a Pressable style prop written as a plain object
+instead of a function.
+○ Explain how you identified and resolved it.
+7. Conclusion
+○ Briefly summarize how View, Text, and Image build the layout; ScrollView and TextInput make it
+scrollable and searchable; and Pressable makes it interactive — and how this combination carries over
+into styling/layout and navigation in later modules.
+Video Requirements
+● Maximum length: 20 minutes. Record as long as you need while you work, then cut and edit the footage
+down to fit, keeping only the important explanations and demonstrations — do not submit the raw, unedited
+recording.
+● Clearly record your computer screen with your code and the running app (Expo Go/emulator) visible.
+● Provide a clear voice-over/narration explaining your process.
+● Make sure your code, commands, and app screen are readable.
+● Showing your face is optional unless otherwise instructed.
+● Your code and explanations must be your own original work, not copied or AI-generated (per the Student
+Activity Sheet Originality criterion).
+● Do not show passwords, API keys, access tokens, or other private information.
+GitHub Repository Requirements
+● Repository must be public, or shared with the instructor's GitHub account, so it can be accessed for grading.
+● Must contain StudentCard, StudentDirectory, your app entry file, and the README.md described above.
+● The code in the repository must match what you write and run in your video — this is part of how originality
+is verified.
+● Do not commit passwords, API keys, access tokens, or other private information.
+Submission
+After recording your video and pushing your code:
+● Upload your video to YouTube or Google Drive.
+● If using YouTube, you may set the video to Unlisted. Do not set it to Private, as the instructor must be able to
+access it.
+● If using Google Drive, make sure the sharing settings allow the instructor to view the video through the link.
+● Copy the shareable link to your video and the URL of your GitHub repository.
+A Google Form will be provided later where you will submit your video link, your GitHub repository link, and other
+required information.
+Naming Format
+Use the following format for both your video and your GitHub repository name:
+IT313_LastName_FirstName_CoreComponents
+Important Reminder
+Your video should not only show the final working screen. You must clearly write, run, and explain your own
+solution, and justify why each core component was the right tool for that part of the problem. The objective is to
+demonstrate that you can lay out, scroll, search, and handle touch in a real React Native screen — the foundation
+this course's styling/layout and navigation modules build on next. Your GitHub repository is part of your
+submission: it must stay accessible through the deadline and its contents must match your video.
+Deadline: October 14, 2026
